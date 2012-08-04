@@ -96,8 +96,14 @@ class WBI
         $iterator = new DirectoryIterator( $this->files_dir );
 
         foreach ( $iterator as $fileinfo ) {
-            if ($fileinfo->isFile()) {
-                $this->files[$fileinfo->getMTime()] = str_replace( '.php', '', $fileinfo->getFilename() );
+            if ( $fileinfo->isFile() ) {
+                $filename = str_replace( '.php', '', $fileinfo->getFilename() );
+
+                if ( in_array( $filename, $this->files ) ) {
+                    continue;
+                }
+
+                $this->files[$fileinfo->getMTime()] = $filename;
             }
         }
         
