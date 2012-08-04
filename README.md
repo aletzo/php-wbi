@@ -3,12 +3,12 @@ php-wbi
 
 Execute PHP code in the web browser - An offine codepad
 
-CAUTION
-=======
+DEPLOY WITH EXTREME CAUTION
+===========================
 
-__DO NOT DEPLOY IN SERVER!__
+__DO NOT DEPLOY IN PRODUCTION SERVERS!__
 
-Use it only in localhost environment, for testing purposes.
+Use it __ONLY__ for testing in localhost environment.
 
 INSTALLATION
 ============
