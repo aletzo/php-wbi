@@ -78,7 +78,7 @@ if ( $wbi->isPost() ) {
                             <span class="help-inline">leave out the &lt;?php tag</span>
                         </div>
                         <div class="control-group">
-                            <input class="btn btn-primary btn-large" type="submit" value="execute" />
+                            <input class="btn btn-primary btn-large" type="submit" value="make magic!" />
                         </div>
                     </form>
 
