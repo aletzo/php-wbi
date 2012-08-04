@@ -14,4 +14,4 @@ INSTALLATION
 ============
 
 1. cd PATH_TO_HTDOCS
-2. git clone http://github.com/aletzo/php-wbi.git vim-wbi
+2. git clone http://github.com/aletzo/php-wbi.git php-wbi
