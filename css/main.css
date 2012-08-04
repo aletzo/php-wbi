@@ -1,17 +1,17 @@
+textarea {
+    height: 200px;
+}
+
 #wrapper {
     margin: 30px auto 0;
 }
 #files {
     max-height: 400px;
-    /*
-    overflow-y: scroll;
-    padding-right: 5px;
-    */
 }
 #trash {
     position: relative;
     right: 50px;
 }
-textarea {
-    height: 200px;
+.help-inline {
+    color: #ccc;
 }

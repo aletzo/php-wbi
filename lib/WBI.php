@@ -7,7 +7,7 @@ class WBI
 
     static protected $instance = null;
 
-    protected $files     = array();
+    protected $files = array();
 
     protected $baseurl   = null;
     protected $files_dir = null;
@@ -64,13 +64,10 @@ class WBI
     {
         try {
             $filename = $name ? $name : $this->generateFilename();
-
             $filepath = $this->getFilePath( $filename );
 
             $content = self::FILE_PREPEND . $code;
-
             $content = stripslashes( $content );
-
             $content = str_replace( "\x0D", '', $content ); // removes the ^M characters
 
             file_put_contents( $filepath, $content );
@@ -88,8 +85,7 @@ class WBI
 
     public function generateFilename()
     {
-        $name = substr( str_shuffle( $this->alpha_numeric ), 0, 10 );
-
+        $name     = substr( str_shuffle( $this->alpha_numeric ), 0, 10 );
         $filename = $this->getFilePath( $name );
 
         return file_exists( $filename ) ? $this->generateFilename() : $name;
@@ -156,9 +152,9 @@ class WBI
         if ( ! $this->baseurl ) {
             $scriptNameParts = explode( '/', $_SERVER['SCRIPT_NAME'] );
 
-            array_pop ( $scriptNameParts );
+            array_pop( $scriptNameParts );
 
-            $this->baseurl =  'http://' . $_SERVER['HTTP_HOST'] . implode( '/', $scriptNameParts );
+            $this->baseurl = 'http://' . $_SERVER['HTTP_HOST'] . implode( '/', $scriptNameParts );
         }
 
         return $this->baseurl;

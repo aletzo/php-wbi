@@ -17,6 +17,7 @@ if ( $wbi->isPost() ) {
 
     if ( $delete ) {
         $wbi->deleteFile( $delete );
+
         header( 'location: ' . $wbi->getBaseurl() );
     }
 
@@ -25,9 +26,7 @@ if ( $wbi->isPost() ) {
     if ( $script ) {
         list( $filename, $filepath, $code ) = $wbi->loadFile( $script );
     }
-
 }
-
 
 ?>
 
@@ -36,6 +35,7 @@ if ( $wbi->isPost() ) {
     <head>
         <title>PHP - Web Browser Interface</title>
         <meta charset="utf-8" />
+
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/main.css" />
     </head>
@@ -47,8 +47,8 @@ if ( $wbi->isPost() ) {
                 </div>
             </div>
             <div class="row">
-                <?php if ( $wbi->hasFiles() ) : ?>
                 <div class="span2">
+                <?php if ( $wbi->hasFiles() ) : ?>
                     <ul id="files" class="nav nav-pills nav-stacked">
                     <?php foreach ( $wbi->getFiles() as $file ) : ?>
                         <li class="<?php if ( $script == $file ) echo 'active'?>">
@@ -57,10 +57,12 @@ if ( $wbi->isPost() ) {
                     <?php endforeach ?>
                     </ul>
                     <div id="trash">
-                        <img src="images/trash.png" title"drab scripts on me to delete them" />
+                        <img src="images/trash.png" title="drag a script on me to delete it" />
                     </div>
-                </div>
+                <?php else : ?>
+                    &nbsp;
                 <?php endif ?>
+                </div>
                 <div class="span10">
                     <form action="" method="post" class="form-inline">
                         <div class="control-group">
